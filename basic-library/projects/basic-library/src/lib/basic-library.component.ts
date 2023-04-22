@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'lib-basic-library',
-  template: `
-    <p>
-      basic-library works!
-    </p>
-  `,
-  styleUrls: ['basic-library.scss']
+  templateUrl: 'basic-library.component.html',
+  styleUrls: ['basic-library.component.scss']
 })
-export class BasicLibraryComponent {
-
-}
+export class BasicLibraryComponent {}
