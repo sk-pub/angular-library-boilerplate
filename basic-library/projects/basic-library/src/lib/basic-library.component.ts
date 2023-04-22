@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
       basic-library works!
     </p>
   `,
-  styles: [
-  ]
+  styleUrls: ['basic-library.scss']
 })
 export class BasicLibraryComponent {
 
