@@ -1,27 +1,56 @@
-# BasicLibrary
+# Steps to build a basic Angular library boilerplate
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+## VS Code: https://code.visualstudio.com/
 
-## Development server
+## Volta: https://docs.volta.sh/guide/getting-started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+    volta -v
 
-## Code scaffolding
+## Node + NPM (LTS)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    volta install node@18
 
-## Build
+    node -v
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Angular library:
 
-## Running unit tests
+    ng new basic-library --create-application=false
+    cd basic-library
+    ng generate library basic-library
+    ng build
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ng test
 
-## Running end-to-end tests
+## ESLint:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    cd basic-library
+    ng add @angular-eslint/schematics
 
-## Further help
+    ng lint
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## StyleLint
+
+    npm install --save-dev stylelint stylelint-config-standard-scss
+    .stylelintrc.json https://stylelint.io/user-guide/get-started
+    package.json "lint:styles": "stylelint \"**/*.scss\""
+
+    npm run lint:styles
+
+## Prettier
+
+    npm install prettier --save-dev
+    .prettierrc.json
+    .prettierignore
+
+    See https://prettier.io/docs/en/integrating-with-linters.html
+    npm install eslint-config-prettier --save-dev
+
+    npx prettier --check .
+
+## Jest
+
+    // See https://www.justjeb.com/post/angular-cli-ng-test-with-jest
+    npm uninstall karma karma-chrome-launcher karma-coverage karma-jasmine  karma-jasmine-html-reporter jasmine-core @types/jasmine
+    npm i jest @types/jest @angular-builders/jest --save-dev
+
+    npm test
